@@ -13,7 +13,6 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
 [cannyimage]: ./examples/cannyimage.jpg "CannyImage"
 [houghimage]: ./examples/houghimage.jpg "HoughImage"
 [finalimage]: ./examples/finalimage.jpg "FinalImage"
