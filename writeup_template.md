@@ -1,8 +1,6 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+## Project Writeup
 
 ---
 
@@ -16,32 +14,42 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
-
+[cannyimage]: ./examples/cannyimage.jpg "CannyImage"
+[houghimage]: ./examples/houghimage.jpg "HoughImage"
+[finalimage]: ./examples/finalimage.jpg "FinalImage"
 ---
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describing the pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+The goal of the pipeline is to detect lane lines and mark them. My pipeline consisted of 5 steps. First, I converted the images to grayscale as hough transform only works in grayscale, then I applied gaussian filter to remove any unwanted noise. After that I applied canny edge detection algorith to detect the edges in the image. The image with edges will look like below.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+![Canny Edge][cannyimage]
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+Once all the edges have been detected in the image, I marked a region where the lane lines will possibly belong and I applied hough transform technique to detect straight lines from that particular region.
 
-![alt text][image1]
-
-
-### 2. Identify potential shortcomings with your current pipeline
+![Hough Transformation][houghimage]
 
 
-One potential shortcoming would be what would happen when ... 
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by identifying line segmentations from hough transformation, which lines belong to left side of the lane and which are right. I calculated the slope of the lines, if it is positive, then the line belongs to left lane, if slope is negative, it belong to right line.
+
+After that I identified the minimum and maximum value of x and y and drew a line using cv2.line, connecting minimum point to maximum point for both the lanes. The final image will look like below.
+
+![Lane lines][finalimage]
+
+
+
+### 2. Identify potential shortcomings with the current pipeline
+
+
+One potential shortcoming would be what would happen when the hough transform could not detect any lines in any particular image or image frame. 
 
 Another shortcoming could be ...
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Suggestion of possible improvements to the pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to handle situation where there are shadows on the road or the lane lines are not perfectly visible.
 
-Another potential improvement could be to ...
+Another potential improvement could be to detect lane lines which are curved.
