@@ -28,14 +28,14 @@ The goal of the pipeline is to detect lane lines and mark them. My pipeline cons
 
 Once all the edges have been detected in the image, I marked a region where the lane lines will possibly belong and I applied hough transform technique to detect straight lines from that particular region.
 
-![Hough Transformation][houghimage]
+![Hough Transformation](examples/houghimage.jpg?raw=true)
 
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by identifying line segmentations from hough transformation, which lines belong to left side of the lane and which are right. I calculated the slope of the lines, if it is positive, then the line belongs to left lane, if slope is negative, it belong to right line.
 
 After that I identified the minimum and maximum value of x and y and drew a line using cv2.line, connecting minimum point to maximum point for both the lanes. The final image will look like below.
 
-![Lane lines][finalimage]
+![Lane lines](examples/finalimage.jpg?raw=true)
 
 
 
