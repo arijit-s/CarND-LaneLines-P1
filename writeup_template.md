@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 
 The goal of the pipeline is to detect lane lines and mark them. My pipeline consisted of 5 steps. First, I converted the images to grayscale as hough transform only works in grayscale, then I applied gaussian filter to remove any unwanted noise. After that I applied canny edge detection algorith to detect the edges in the image. The image with edges will look like below.
 
-![Canny Edge][examples/cannyimage.jpg?raw=true]
+![Canny Edge](examples/cannyimage.jpg?raw=true)
 
 Once all the edges have been detected in the image, I marked a region where the lane lines will possibly belong and I applied hough transform technique to detect straight lines from that particular region.
 
