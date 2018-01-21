@@ -13,9 +13,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[cannyimage]: ./examples/cannyimage.jpg "CannyImage"
-[houghimage]: ./examples/houghimage.jpg "HoughImage"
-[finalimage]: ./examples/finalimage.jpg "FinalImage"
+[cannyimage]: ./examples/cannyimage.jpg?raw=true "CannyImage"
+[houghimage]: ./examples/houghimage.jpg?raw=true "HoughImage"
+[finalimage]: ./examples/finalimage.jpg?raw=true "FinalImage"
 ---
 
 ### Reflection
