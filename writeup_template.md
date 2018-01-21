@@ -10,12 +10,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-
-[//]: # (Image References)
-
-[cannyimage]: ./examples/cannyimage.jpg?raw=true "CannyImage"
-[houghimage]: ./examples/houghimage.jpg?raw=true "HoughImage"
-[finalimage]: ./examples/finalimage.jpg?raw=true "FinalImage"
 ---
 
 ### Reflection
@@ -43,8 +37,6 @@ After that I identified the minimum and maximum value of x and y and drew a line
 
 
 One potential shortcoming would be what would happen when the hough transform could not detect any lines in any particular image or image frame. 
-
-Another shortcoming could be ...
 
 
 ### 3. Suggestion of possible improvements to the pipeline
